@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  list-style-type: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-button {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  margin: 20px;
+}
+.nav-section {
+  display: flex;
+  justify-content: center;
+}
+/* 메뉴바 */
+.menu-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.menu-list {
+  margin: 20px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  column-gap: 20px;
+}
+.search-form-desktop {
+  align-self: center;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  margin: 20px;
+  display: flex;
+  margin-bottom: 50px;
+}
+.search-form {
+  align-self: center;
+  position: relative;
+  top: 30px;
+  margin: 20px;
+  display: flex;
+  margin-bottom: 50px;
+}
+.search-form input,
+.search-form-desktop input {
+  border: none;
+  border-bottom: 2px solid rgb(7, 7, 7);
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 2rem;
+  padding-left: 30px;
+
+  font-size: 1rem;
+}
+.search-icon {
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+/* ProductCard.js */
+.productCard {
+  margin-bottom: 100px;
+}
+.productCard:hover .productCard-imgWrap img {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+.productCard:hover .productCard-title {
+  text-decoration: underline;
+}
+.productCard-imgWrap {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.productCard-imgWrap,
+.productCard-imgWrap img {
+  width: 100%;
+}
+.productCard-new {
+  font-size: 10px;
+  background-color: rgb(111, 0, 0);
+  width: fit-content;
+  padding: 2px 4px;
+  color: #fff;
+  border-radius: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navbar */
+.login-button {
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+  cursor: pointer;
+}
+.login-link:hover {
+  text-decoration: underline;
+  color: #000;
+  cursor: pointer;
+}
+.navbar-logo {
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .onlyDesktop {
+    display: block;
+  }
+  .onlyMobile {
+    display: none;
+  }
+}
+@media (min-width: 0) and (max-width: 1023px) {
+  .onlyDesktop {
+    display: none;
+  }
+  .onlyMobile {
+    display: block;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hamburger {
+  width: 25px;
+  margin: auto;
+  position: absolute;
+  z-index: 10;
+  left: 20px;
+  top: 20px;
+}
+.hamburger .menu_icon {
+  position: relative;
+  width: 25px;
+  height: 16px;
+}
+.hamburger .border {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 2.5px;
+  border-radius: 2px;
+  transition: all 0.3s;
+  background: #222;
+}
+.hamburger .border1 {
+  top: 0;
+}
+.hamburger .border2 {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.hamburger .border3 {
+  bottom: 0px;
+}
+.type1 .active .border1 {
+  transform: translateX(0) translateY(16px) rotate(45deg) !important;
+}
+.type1 .active .border2 {
+  opacity: 0;
+}
+.type1 .active .border3 {
+  transform: translateX(0px) translateY(-16px) rotate(-45deg) !important;
+}
+.menu-list-mobile {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.menu-list-mobile > li {
+  cursor: pointer;
+}
+
+/* login page */
+.login-form {
+  margin: 40px auto;
+  width: 500px;
+}
+
+/* ProductDetail */
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.product-img img {
+  height: 500px;
+}
+.product-desc {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+}
+.product-title {
+  font-size: 24px;
+}
+.product-choice {
+  font-size: 14px;
+  color: #aaa;
+}
+.product-btn {
+  background: #222;
+  color: #fff;
+  width: 80%;
+  outline: none;
+  border-radius: 4px;
+  padding: 6px 0;
+  margin-top: 10px;
 }
